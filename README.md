@@ -1,4 +1,7 @@
-# Barebones gulp project
+# WAD JS testing
+
+
+## Barebones gulp project
 
 Barebones gulp.js project. Gives you local server, liveReload, Sass, & jshint.
 
