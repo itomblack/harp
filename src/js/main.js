@@ -55,7 +55,6 @@ function getVolume(e, parent, height) {
 $('[id^="note"]').on('vmousemove', function(e) {
 
     getVolume(e, this.parentNode.id, $(this).height());
-    // console.log(e);
 
 });
 
@@ -139,13 +138,6 @@ $('[id^="play"]').on('click', function(e) {
 
 // ******************************************************************* //
 
-
-
-$('#hide-all').on("click", function (){
-    $(this).addClass('js-hide');
-    $('body').addClass('opacity-up');
-    $('#harmonica').addClass('wiggle');
-});
 
 
 

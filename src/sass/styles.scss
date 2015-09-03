@@ -47,10 +47,11 @@ body {
   height: 100%;
   width: 100%; 
   overflow: hidden;
+  animation: opacityUp 2s ease;
 }
 
 body {
-  // animation: opacityUp 2s ease;
+  animation: opacityUp 2s ease;
 }
 
 //===============================================================================
