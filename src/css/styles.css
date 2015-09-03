@@ -189,19 +189,19 @@ table {
 td, th {
   padding: 0; }
 
-/* line 29, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 30, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 *, *::before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased; }
 
-/* line 35, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 36, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 ul {
   padding: 0;
   list-style: none; }
 
-/* line 41, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 42, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 html, body {
   background-color: #030017;
   color: white;
@@ -211,7 +211,7 @@ html, body {
   width: 100%;
   overflow: hidden; }
 
-/* line 56, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 61, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .harmonica, .harmonica-notes {
   position: fixed;
   width: 700px;
@@ -237,46 +237,51 @@ html, body {
       left: -webkit-calc(50% - 175px);
       left: calc(50% - 175px); } }
 
-/* line 78, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 83, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+.wiggle {
+  -webkit-animation: wiggle 2s ease;
+  animation: wiggle 2s ease; }
+
+/* line 85, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .harmonica-notes {
   display: none; }
 
-/* line 83, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 90, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .harmonica img {
   width: 100%; }
 
-/* line 88, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 95, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 [class^="row-"] {
   position: absolute;
   width: 70%;
   margin-left: 15%;
   height: 100%; }
 
-/* line 96, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 103, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .row-blow {
   top: -100%; }
-  /* line 99, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 106, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   .row-blow .square {
     -webkit-box-shadow: inset 0px 0px 0px 0px #00feeb;
     box-shadow: inset 0px 0px 0px 0px #00feeb; }
-    /* line 101, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+    /* line 108, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
     .row-blow .square:hover, .row-blow .square.highlight-row {
       -webkit-box-shadow: inset 0px -500px 0px 0px #7a21fd;
       box-shadow: inset 0px -500px 0px 0px #7a21fd; }
 
-/* line 107, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 114, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .row-draw {
   bottom: -100%; }
-  /* line 110, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 117, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   .row-draw .square {
     -webkit-box-shadow: inset 0px 0px 0px 0px #7a21fd;
     box-shadow: inset 0px 0px 0px 0px #7a21fd; }
-    /* line 113, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+    /* line 120, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
     .row-draw .square:hover {
       -webkit-box-shadow: inset 0px 500px 0px 0px #00feeb;
       box-shadow: inset 0px 500px 0px 0px #00feeb; }
 
-/* line 119, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 126, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .square {
   width: 10%;
   height: 100%;
@@ -287,18 +292,24 @@ html, body {
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease; }
 
-/* line 130, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 137, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .key-selected {
   display: block; }
 
-/* line 132, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 138, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+.js-hide {
+  display: none; }
+
+/* line 140, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+  padding-left: -webkit-calc(50% - 120px);
+  padding-left: calc(50% - 120px);
   border-top: 1px solid #0142e8;
   background-color: none; }
-  /* line 140, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 148, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   .footer button {
     float: left;
     background-color: #030017;
@@ -307,49 +318,205 @@ html, body {
     appearance: none;
     font-size: 30px;
     font-weight: bold;
-    width: 50px;
+    text-align: center;
+    width: 80px;
     height: 50px;
     opacity: 0.5;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     outline: none; }
-    /* line 154, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+    /* line 163, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
     .footer button:hover {
-      background-color: #0142e8;
-      color: #030017; }
-    /* line 159, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
-    .footer button.active {
       background-color: #0142e8;
       color: #030017;
       opacity: 1; }
+    /* line 169, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+    .footer button.active {
+      background-color: #0142e8;
+      color: #030017; }
 
-/* line 175, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 177, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+.intro-box {
+  width: 220px;
+  height: 70px;
+  border: 1px solid #00feeb;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #00feeb;
+  position: absolute;
+  bottom: 60px;
+  left: -webkit-calc(50% - 110px);
+  left: calc(50% - 110px);
+  -webkit-animation: borderChange 2s infinite;
+  animation: borderChange 2s infinite; }
+  /* line 192, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  .intro-box p {
+    position: relative;
+    padding: 0;
+    margin: 0; }
+    /* line 197, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+    .intro-box p::after {
+      -webkit-animation: borderChange 2s infinite;
+      animation: borderChange 2s infinite;
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 99px;
+      bottom: -20px;
+      border-top: 3px solid #00feeb;
+      border-right: 3px solid #00feeb;
+      -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+      transform: rotate(135deg); }
+
+/* line 215, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+.hide-all {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: #030017; }
+
+/* line 223, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+.opacity-up {
+  -webkit-animation: opacityUp 2s ease;
+  animation: opacityUp 2s ease; }
+
+/* line 225, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .js-clicked {
   -webkit-animation: colChange 1s ease;
   animation: colChange 1s ease; }
 
+@-webkit-keyframes borderChange {
+  /* line 230, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  0% {
+    border-color: #00feeb; }
+
+  /* line 231, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  50% {
+    border-color: #0142e8; }
+
+  /* line 232, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  100% {
+    border-color: #00feeb; } }
+
+@keyframes borderChange {
+  /* line 230, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  0% {
+    border-color: #00feeb; }
+
+  /* line 231, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  50% {
+    border-color: #0142e8; }
+
+  /* line 232, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  100% {
+    border-color: #00feeb; } }
+
 @-webkit-keyframes colChange {
-  /* line 180, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 236, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   0% {
     background-color: #4f8792; }
 
-  /* line 181, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 237, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   50% {
     background-color: #5a924f; }
 
-  /* line 182, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 238, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   100% {
     background-color: #4f8792; } }
 
 @keyframes colChange {
-  /* line 180, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 236, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   0% {
     background-color: #4f8792; }
 
-  /* line 181, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 237, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   50% {
     background-color: #5a924f; }
 
-  /* line 182, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 238, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   100% {
     background-color: #4f8792; } }
+
+@-webkit-keyframes opacityUp {
+  /* line 243, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  0% {
+    opacity: 0; }
+
+  /* line 244, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  100% {
+    opacity: 1; } }
+
+@keyframes opacityUp {
+  /* line 243, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  0% {
+    opacity: 0; }
+
+  /* line 244, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes wiggle {
+  /* line 248, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  0% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg); }
+
+  /* line 249, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  20% {
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg); }
+
+  /* line 250, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  40% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg); }
+
+  /* line 251, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  60% {
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg); }
+
+  /* line 252, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  80% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg); }
+
+  /* line 253, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); } }
+
+@keyframes wiggle {
+  /* line 248, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  0% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg); }
+
+  /* line 249, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  20% {
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg); }
+
+  /* line 250, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  40% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg); }
+
+  /* line 251, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  60% {
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg); }
+
+  /* line 252, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  80% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg); }
+
+  /* line 253, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); } }

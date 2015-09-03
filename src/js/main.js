@@ -36,12 +36,12 @@ var theVolume = 1;
 
 
 function getVolume(e, parent, height) {
-    if ( parent == 'row-blow') {
+    if ( parent.indexOf('row-blow') > -1) {
          //get volume from mouse positions in div
         theVolume = (e.offsetY/ height).toFixed(1);
         }
     //Reverse volume if draw note
-    else if ( parent == 'row-draw') {
+    else if ( parent.indexOf('row-draw') > -1) {
         theVolume = (e.offsetY/ height);
         theVolume = (1 - theVolume).toFixed(1);
     }
@@ -59,7 +59,7 @@ $('[id^="note"]').on('vmousemove', function(e) {
 
 });
 
-// ********* MOUSE OVER PLAYS A NOT *********** //
+// ********* MOUSE OVER PLAYS A NOTE *********** //
 $('[id^="note"]').on('vmouseover', function(e) {
     //get note from ID
     var note = this.id.split('-').pop();
@@ -83,6 +83,7 @@ $('[id^="note"]').on('vmouseover', function(e) {
 
 // ********* PLAY A NOTE *********** //
 function playsound(note, theVolume) {
+    // console.log(theVolume);
     if (theVolume >= 0 && theVolume <= 1) {
         harmonica.play({ pitch : note, env : { release : 0.5 } , volume: theVolume });  
     }
@@ -99,6 +100,8 @@ function playsound(note, theVolume) {
 
 $('[id^="play"]').on('click', function(e) {
 
+    $('#intro-box').addClass('js-hide');
+
     $('[id^="play"]').removeClass('active');
     $(this).addClass('active');
     var key = this.id.split('-').pop();
@@ -112,13 +115,12 @@ $('[id^="play"]').on('click', function(e) {
     var i = 0;                     
     function soundLoop () {           
        setTimeout(function () {
-            console.log(key);
-            console.log(scale[i]);
+
           var noteSelect =  scale[i].id.split('-').pop();
           //highlight bar
           $(scale[i]).toggleClass('highlight-row');
           //play sound
-            playsound(noteSelect, 0.3);         
+            playsound(noteSelect, 0.8);         
           i++;                     
           if (i < 10) {            
              soundLoop();              
@@ -133,17 +135,19 @@ $('[id^="play"]').on('click', function(e) {
 
     soundLoop();
 
-
-
-
-
-
-
-    // console.log($('#row-blow-' + key).children().attr('id') );
-
 });
 
 // ******************************************************************* //
+
+
+
+$('#hide-all').on("click", function (){
+    $(this).addClass('js-hide');
+    $('body').addClass('opacity-up');
+    $('#harmonica').addClass('wiggle');
+});
+
+
 
 
 
