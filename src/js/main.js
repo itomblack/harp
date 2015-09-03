@@ -8,107 +8,142 @@ var col1 = 'hsla(190, 30%, 44%, 1)',
 
  
 
-// ** bass ** // 
+// ** harmonica ** //
 
-var bass = new Wad({
-    source : 'sine',
-    env : {
-        attack : 0.02,
-        decay : 0.1,
-        sustain : 0.9,
-        hold : 0.4,
-        release : 0.1
-    }
-});
-
-// ** piano ** //
-
-
-
-var piano = new Wad({
+var harmonica = new Wad({
     source : 'square', 
     env : {
-        attack : 0.01, 
-        decay : 0.005, 
-        sustain : 0.2, 
+        attack : 0.5, 
+        decay : 0, 
+        sustain : 1, 
         hold : 0.015, 
-        release : 0.3
+        release : 10
     }, 
     filter : {
         type : 'lowpass', 
-        frequency : 1200, 
+        frequency : 3000, 
         q : 8.5, 
         env : {
             attack : 0.2, 
-            frequency : 600
+            frequency : 100
         }
+    },
+});
+
+var theVolume = 1;
+// ******************************************************************* //
+
+
+
+function getVolume(e, parent, height) {
+    if ( parent == 'row-blow') {
+         //get volume from mouse positions in div
+        theVolume = (e.offsetY/ height).toFixed(1);
+        }
+    //Reverse volume if draw note
+    else if ( parent == 'row-draw') {
+        theVolume = (e.offsetY/ height);
+        theVolume = (1 - theVolume).toFixed(1);
     }
+}
+// ******************************************************************* //
+
+
+
+
+// ********* MOUSE MOVE SET THE VOLUME BY DIV POSITION *********** //
+$('[id^="note"]').on('vmousemove', function(e) {
+
+    getVolume(e, this.parentNode.id, $(this).height());
+    // console.log(e);
+
 });
 
+// ********* MOUSE OVER PLAYS A NOT *********** //
+$('[id^="note"]').on('vmouseover', function(e) {
+    //get note from ID
+    var note = this.id.split('-').pop();
+    //play note
+    playsound(note, theVolume);
+    //keep playing note while mouseover
+    timeout = setInterval(function () {
+        playsound(note, theVolume)
+    }, 500);
+    return false;
+    //stop when mouse removed
+}).on('vmouseup', function() {
+    clearInterval(timeout);
+    return false;
+}).on('vmouseout', function() {
+    clearInterval(timeout);
+    return false;
+});
+// ******************************************************************* //
 
 
-// ** snare ** //
-
-var snare = new Wad ({
-   source : 'noise', 
-    env : {
-        attack : .001, 
-        decay : .01, 
-        sustain : .2, 
-        hold : .03, 
-        release : .02
-    }, 
-    filter : {
-        type : 'bandpass', 
-        frequency : 300, 
-        q : .180
+// ********* PLAY A NOTE *********** //
+function playsound(note, theVolume) {
+    if (theVolume >= 0 && theVolume <= 1) {
+        harmonica.play({ pitch : note, env : { release : 0.5 } , volume: theVolume });  
     }
-})
+    else {
+        theVolume = 0.5;
+        harmonica.play({ pitch : note, env : { release : 0.5 } , volume: theVolume });  
+    }  
+}
+// ******************************************************************* //
+
+
+
+// ********* CHANGE KEY WITH BUTTONS *********** //
+
+$('[id^="play"]').on('click', function(e) {
+
+    $('[id^="play"]').removeClass('active');
+    $(this).addClass('active');
+    var key = this.id.split('-').pop();
+    
+    $('.key-selected').removeClass('key-selected');
+    $('#harmonica-notes-' + key).addClass('key-selected');
+
+    var scale = $('#row-blow-' + key).children();
+    
+    //loop through 10 sounds in scale
+    var i = 0;                     
+    function soundLoop () {           
+       setTimeout(function () {
+            console.log(key);
+            console.log(scale[i]);
+          var noteSelect =  scale[i].id.split('-').pop();
+          //highlight bar
+          $(scale[i]).toggleClass('highlight-row');
+          //play sound
+            playsound(noteSelect, 0.3);         
+          i++;                     
+          if (i < 10) {            
+             soundLoop();              
+          } else {
+            //remove highlight classes at end
+            setTimeout(function(){
+              $('#row-blow-' + key).children().toggleClass('highlight-row'); 
+            }, 400);            
+          }                       
+       }, 50)
+    }
+
+    soundLoop();
 
 
 
 
 
-$('[id^="sound"]').on('mousedown', function() {
 
- 
-//animate requires jquery.ui
-$(this).stop().animate( { backgroundColor: col3 }, 0 )
-        .delay(100).animate( { backgroundColor: col1 }, 500 );
+
+    // console.log($('#row-blow-' + key).children().attr('id') );
 
 });
 
-
-$('#sound-1').on('mousedown', function() {
-
-    bass.play({ pitch : 'B2',env : { release : 0.25 } }); 
-
-});
-
-
-
-$('#sound-2').on('mousedown', function() {
-
-    bass.play({ pitch : 'A2', env : { release : 4 } });   
-});
-
-
-
-$('#sound-3').on('mousedown', function() {
-
-    piano.play({ pitch : 'F4',env : { release : 0.25 } });    
-});
-
-
-
-$('#sound-4').on('mousedown', function() {
-
-    piano.play({ pitch : 'F5', env : { release : 4 } });  
-    snare.play();  
-});
-
-
-
+// ******************************************************************* //
 
 
 

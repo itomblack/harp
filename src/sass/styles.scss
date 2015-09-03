@@ -11,10 +11,14 @@
 // VARIABLES
 //===============================================================================
 $paper:  white;
-$ink:    black;
+$ink:    #030017;
 $col1: hsla(190, 30%, 44%, 1);
 $col2: hsla(190, 60%, 44%, 1);
 $col3: hsla(110, 30%, 44%, 1);
+
+$brightgreen: #00feeb;
+$purple: #7a21fd;
+$blue: #0142e8;
 
 //===============================================================================
 // BASCIS
@@ -35,11 +39,13 @@ ul {
 
 html,
 body {
-  background-color: $paper;
-  color: $ink;
-  font-family: sans-serif;
+  background-color: $ink;
+  color: $paper;
+  font-family: helvetica, arial, sans-serif;
   line-height: 1.4;
   height: 100%;
+  width: 100%; 
+  overflow: hidden;
 }
 
 //===============================================================================
@@ -47,26 +53,124 @@ body {
 //===============================================================================
 
 
+.harmonica, .harmonica-notes {
+  position: fixed;
+  width: 700px;
+  height: 162px;
+  top: calc(50% - 100px);
+  left: calc(50% - 350px);
+
+  @media screen and (max-width: 768px) {
+      width: 450px;
+      height: 105px;
+      top: calc(50% - 65px);
+      left: calc(50% - 225px);
+  }
+
+  @media screen and (max-width: 480px) {
+      width: 350px;
+      height: 81px;
+      top: calc(50% - 55px);
+      left: calc(50% - 175px);
+  }
+}
+
+.harmonica-notes {
+  display: none;
+}
+
+.harmonica {
+  img {
+    width: 100%;
+  }
+}
+
+[class^="row-"] {
+  position: absolute;
+  width: 70%;
+  margin-left: 15%;
+  height: 100%;
+  
+}
+
+.row-blow {
+  top: -100%;
+
+  & .square {
+    box-shadow: inset 0px 0px 0px 0px $brightgreen;
+    &:hover, &.highlight-row {
+      box-shadow: inset 0px -500px 0px 0px $purple;
+    }
+  }
+}
+
+.row-draw {
+  bottom: -100%;
+
+  & .square {
+    box-shadow: inset 0px 0px 0px 0px $purple;
+
+    &:hover {
+      box-shadow: inset 0px 500px 0px 0px $brightgreen;
+    }
+  }
+}
+
 .square {
-  width: 24vw;
-  height: 25vh;
-  background-color: $col1;
+  width: 10%;
+  height: 100%;
+  background-color: $ink;
   float: left;
   margin: 0;
-  margin-right: 1vw;
   padding: 0;
+  transition: all 0.7s ease;
 
-  &:first-child {
-    margin-left: 0.5vw;
-  }
-  &:last-child {
-    margin-right: 0;
-  }
-
-  // &:hover {
-  //   background-color: $col2;
-  // }
 }
+
+.key-selected { display: block; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  // height: 50px;
+  border-top: 1px solid $blue;
+  background-color: none;
+
+  button {
+    float: left;
+    background-color: $ink;
+    color: $blue;
+    border: none;
+    appearance: none;
+    font-size: 30px;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    outline: none;
+
+    &:hover {
+      background-color: $blue;
+      color: $ink;
+    }
+
+    &.active {
+      background-color: $blue;
+      color: $ink;
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
+
+
+
+
 
 .js-clicked {
   animation: colChange 1s ease;
