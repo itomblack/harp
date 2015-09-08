@@ -78,6 +78,13 @@ body {
       top: calc(50% - 55px);
       left: calc(50% - 175px);
   }
+
+  @media screen and (max-width: 350px) {
+      width: 280px;
+      height: 65px;
+      top: calc(50% - 55px);
+      left: calc(50% - 140px);
+  }
 }
 
 .wiggle { animation: wiggle 2s ease; }
@@ -170,6 +177,13 @@ body {
       background-color: $blue;
       color: $ink;
     }
+
+    @media screen and (max-width: 480px) {
+        font-size: 25px;
+        height: 40px;
+      }
+
+
   }
 }
 
@@ -206,6 +220,26 @@ body {
       border-right: 3px solid $brightgreen;
       transform: rotate(135deg);
     }
+  }
+
+  @media screen and (max-width: 480px) {
+      width: 200px;
+      height: 45px;
+      padding: 5px 0;
+      left: calc(50% - 100px);
+      font-size: 14px;
+
+      p {
+        &::after {
+          width: 14px;
+          height: 14px;
+          position: absolute;
+          left: 92px;
+          bottom: -12px;
+        }
+      }
+
+
   }
 }
 

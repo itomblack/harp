@@ -236,52 +236,60 @@ html, body {
       top: calc(50% - 55px);
       left: -webkit-calc(50% - 175px);
       left: calc(50% - 175px); } }
+  @media screen and (max-width: 350px) {
+    .harmonica, .harmonica-notes {
+      width: 280px;
+      height: 65px;
+      top: -webkit-calc(50% - 55px);
+      top: calc(50% - 55px);
+      left: -webkit-calc(50% - 140px);
+      left: calc(50% - 140px); } }
 
-/* line 83, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 90, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .wiggle {
   -webkit-animation: wiggle 2s ease;
   animation: wiggle 2s ease; }
 
-/* line 85, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 92, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .harmonica-notes {
   display: none; }
 
-/* line 90, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 97, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .harmonica img {
   width: 100%; }
 
-/* line 95, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 102, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 [class^="row-"] {
   position: absolute;
   width: 70%;
   margin-left: 15%;
   height: 100%; }
 
-/* line 103, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 110, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .row-blow {
   top: -100%; }
-  /* line 106, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 113, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   .row-blow .square {
     -webkit-box-shadow: inset 0px 0px 0px 0px #00feeb;
     box-shadow: inset 0px 0px 0px 0px #00feeb; }
-    /* line 108, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+    /* line 115, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
     .row-blow .square:hover, .row-blow .square.highlight-row {
       -webkit-box-shadow: inset 0px -500px 0px 0px #7a21fd;
       box-shadow: inset 0px -500px 0px 0px #7a21fd; }
 
-/* line 114, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 121, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .row-draw {
   bottom: -100%; }
-  /* line 117, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 124, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   .row-draw .square {
     -webkit-box-shadow: inset 0px 0px 0px 0px #7a21fd;
     box-shadow: inset 0px 0px 0px 0px #7a21fd; }
-    /* line 120, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+    /* line 127, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
     .row-draw .square:hover {
       -webkit-box-shadow: inset 0px 500px 0px 0px #00feeb;
       box-shadow: inset 0px 500px 0px 0px #00feeb; }
 
-/* line 126, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 133, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .square {
   width: 10%;
   height: 100%;
@@ -292,15 +300,15 @@ html, body {
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease; }
 
-/* line 137, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 144, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .key-selected {
   display: block; }
 
-/* line 138, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 145, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .js-hide {
   display: none; }
 
-/* line 140, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 147, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .footer {
   position: fixed;
   bottom: 0;
@@ -309,7 +317,7 @@ html, body {
   padding-left: calc(50% - 120px);
   border-top: 1px solid #0142e8;
   background-color: none; }
-  /* line 148, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 155, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   .footer button {
     float: left;
     background-color: #030017;
@@ -325,17 +333,21 @@ html, body {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     outline: none; }
-    /* line 163, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+    /* line 170, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
     .footer button:hover {
       background-color: #0142e8;
       color: #030017;
       opacity: 1; }
-    /* line 169, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+    /* line 176, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
     .footer button.active {
       background-color: #0142e8;
       color: #030017; }
+    @media screen and (max-width: 480px) {
+      .footer button {
+        font-size: 25px;
+        height: 40px; } }
 
-/* line 177, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 191, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .intro-box {
   width: 220px;
   height: 70px;
@@ -351,12 +363,12 @@ html, body {
   left: calc(50% - 110px);
   -webkit-animation: borderChange 2s infinite;
   animation: borderChange 2s infinite; }
-  /* line 192, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 206, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   .intro-box p {
     position: relative;
     padding: 0;
     margin: 0; }
-    /* line 197, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+    /* line 211, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
     .intro-box p::after {
       -webkit-animation: borderChange 2s infinite;
       animation: borderChange 2s infinite;
@@ -371,152 +383,167 @@ html, body {
       -webkit-transform: rotate(135deg);
       -ms-transform: rotate(135deg);
       transform: rotate(135deg); }
+  @media screen and (max-width: 480px) {
+    .intro-box {
+      width: 200px;
+      height: 45px;
+      padding: 5px 0;
+      left: -webkit-calc(50% - 100px);
+      left: calc(50% - 100px);
+      font-size: 14px; }
+      /* line 233, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+      .intro-box p::after {
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        left: 92px;
+        bottom: -12px; } }
 
-/* line 215, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 249, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .hide-all {
   position: fixed;
   height: 100%;
   width: 100%;
   background-color: #030017; }
 
-/* line 223, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 257, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .opacity-up {
   -webkit-animation: opacityUp 2s ease;
   animation: opacityUp 2s ease; }
 
-/* line 225, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+/* line 259, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
 .js-clicked {
   -webkit-animation: colChange 1s ease;
   animation: colChange 1s ease; }
 
 @-webkit-keyframes borderChange {
-  /* line 230, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 264, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   0% {
     border-color: #00feeb; }
 
-  /* line 231, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 265, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   50% {
     border-color: #0142e8; }
 
-  /* line 232, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 266, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   100% {
     border-color: #00feeb; } }
 
 @keyframes borderChange {
-  /* line 230, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 264, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   0% {
     border-color: #00feeb; }
 
-  /* line 231, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 265, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   50% {
     border-color: #0142e8; }
 
-  /* line 232, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 266, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   100% {
     border-color: #00feeb; } }
 
 @-webkit-keyframes colChange {
-  /* line 236, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 270, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   0% {
     background-color: #4f8792; }
 
-  /* line 237, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 271, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   50% {
     background-color: #5a924f; }
 
-  /* line 238, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 272, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   100% {
     background-color: #4f8792; } }
 
 @keyframes colChange {
-  /* line 236, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 270, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   0% {
     background-color: #4f8792; }
 
-  /* line 237, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 271, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   50% {
     background-color: #5a924f; }
 
-  /* line 238, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 272, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   100% {
     background-color: #4f8792; } }
 
 @-webkit-keyframes opacityUp {
-  /* line 243, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 277, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   0% {
     opacity: 0; }
 
-  /* line 244, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 278, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   100% {
     opacity: 1; } }
 
 @keyframes opacityUp {
-  /* line 243, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 277, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   0% {
     opacity: 0; }
 
-  /* line 244, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 278, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   100% {
     opacity: 1; } }
 
 @-webkit-keyframes wiggle {
-  /* line 248, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 282, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   0% {
     -webkit-transform: rotate(3deg);
     transform: rotate(3deg); }
 
-  /* line 249, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 283, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   20% {
     -webkit-transform: rotate(-3deg);
     transform: rotate(-3deg); }
 
-  /* line 250, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 284, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   40% {
     -webkit-transform: rotate(3deg);
     transform: rotate(3deg); }
 
-  /* line 251, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 285, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   60% {
     -webkit-transform: rotate(-3deg);
     transform: rotate(-3deg); }
 
-  /* line 252, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 286, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   80% {
     -webkit-transform: rotate(3deg);
     transform: rotate(3deg); }
 
-  /* line 253, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 287, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   100% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); } }
 
 @keyframes wiggle {
-  /* line 248, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 282, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   0% {
     -webkit-transform: rotate(3deg);
     transform: rotate(3deg); }
 
-  /* line 249, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 283, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   20% {
     -webkit-transform: rotate(-3deg);
     transform: rotate(-3deg); }
 
-  /* line 250, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 284, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   40% {
     -webkit-transform: rotate(3deg);
     transform: rotate(3deg); }
 
-  /* line 251, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 285, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   60% {
     -webkit-transform: rotate(-3deg);
     transform: rotate(-3deg); }
 
-  /* line 252, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 286, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   80% {
     -webkit-transform: rotate(3deg);
     transform: rotate(3deg); }
 
-  /* line 253, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
+  /* line 287, /Users/itomblack/Repos/sound-test/src/sass/styles.scss */
   100% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); } }
