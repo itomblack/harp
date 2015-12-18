@@ -1,0 +1,27 @@
+/* line 9, /Users/itomblack/Repos/sound-or-paper-test/src/sass/paper.scss */
+*, *::before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased; }
+
+/* line 15, /Users/itomblack/Repos/sound-or-paper-test/src/sass/paper.scss */
+ul {
+  padding: 0;
+  list-style: none; }
+
+/* line 21, /Users/itomblack/Repos/sound-or-paper-test/src/sass/paper.scss */
+html, body {
+  background-color: #030017;
+  color: white;
+  font-family: helvetica, arial, sans-serif;
+  line-height: 1.4;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; }
+
+/* Scale canvas with resize attribute to full size */
+/* line 35, /Users/itomblack/Repos/sound-or-paper-test/src/sass/paper.scss */
+canvas[resize] {
+  width: 100%;
+  height: 100%; }

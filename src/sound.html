@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Sounds of the Underground</title> <!-- ADD A TITLE! -->
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>  
+
+<div id="harmonica" class="harmonica">
+  <img src="../img/harp.svg" alt="harmonica">
+</div>
+<div id="harmonica-notes-C" class="harmonica-notes">
+  <div id="row-blow-C" class="row-blow">
+    <div id="note-130.813" class="square" alt="C2"></div>
+    <div id="note-164.814" class="square" alt="E2"></div>
+    <div id="note-195.998" class="square" alt="G2"></div>
+    <div id="note-261.626" class="square" alt="C3"></div>
+    <div id="note-329.628" class="square" alt="E3"></div>
+    <div id="note-391.995" class="square" alt="G3"></div>
+    <div id="note-523.251" class="square" alt="C4"></div>
+    <div id="note-659.255" class="square" alt="E4"></div>
+    <div id="note-783.991" class="square" alt="G4"></div>
+    <div id="note-1046.5" class="square" alt="C5"></div>
+  </div>
+  <div id="row-draw-C" class="row-draw">
+    <div id="note-146.832" class="square" alt="D2"></div>
+    <div id="note-195.998" class="square" alt="G2"></div>
+    <div id="note-246.942" class="square" alt="B3"></div>
+    <div id="note-293.665" class="square" alt="D3"></div>
+    <div id="note-349.228" class="square" alt="F3"></div>
+    <div id="note-440" class="square" alt="A4"></div>
+    <div id="note-493.883" class="square" alt="B4"></div>
+    <div id="note-587.33" class="square" alt="D4"></div>
+    <div id="note-698.456" class="square" alt="F4"></div>
+    <div id="note-880" class="square" alt="A5"></div>
+  </div>
+</div>
+
+<div id="harmonica-notes-G" class="harmonica-notes">
+  <div id="row-blow-G" class="row-blow">
+    <div id="note-195.998" class="square" alt="G2"></div>
+    <div id="note-246.942" class="square" alt="B3"></div>
+    <div id="note-293.665" class="square" alt="D3"></div>
+    <div id="note-391.995" class="square" alt="G3"></div>
+    <div id="note-493.883" class="square" alt="B4"></div>
+    <div id="note-587.33" class="square" alt="D4"></div>
+    <div id="note-783.991" class="square" alt="G4"></div>
+    <div id="note-880" class="square" alt="B5"></div>
+    <div id="note-1174.66" class="square" alt="D5"></div>
+    <div id="note-1567.98" class="square" alt="G5"></div>
+  </div>
+  <div id="row-draw-G" class="row-draw">
+    <div id="note-220" class="square" alt="A3"></div>
+    <div id="note-293.665" class="square" alt="D3"></div>
+    <div id="note-369.994" class="square" alt="F#3"></div>
+    <div id="note-440" class="square" alt="A4"></div>
+    <div id="note-523.251" class="square" alt="C4"></div>
+    <div id="note-659.255" class="square" alt="E4"></div>
+    <div id="note-739.989" class="square" alt="F#4"></div>
+    <div id="note-880" class="square" alt="A5"></div>
+    <div id="note-1046.5" class="square" alt="C5"></div>
+    <div id="note-1318.51" class="square" alt="E5"></div>
+  </div>
+</div>
+
+<div id="harmonica-notes-F" class="harmonica-notes">
+  <div id="row-blow-F" class="row-blow">
+    <div id="note-174.614" class="square" alt="F2"></div>
+    <div id="note-220" class="square" alt="A3"></div>
+    <div id="note-261.626" class="square" alt="C3"></div>
+    <div id="note-349.228" class="square" alt="F3"></div>
+    <div id="note-440" class="square" alt="A4"></div>
+    <div id="note-523.251" class="square" alt="C4"></div>
+    <div id="note-698.456" class="square" alt="F4"></div>
+    <div id="note-880" class="square" alt="A5"></div>
+    <div id="note-1046.5" class="square" alt="C5"></div>
+    <div id="note-1396.91" class="square" alt="F5"></div>
+  </div>
+  <div id="row-draw-F" class="row-draw">
+    <div id="note-195.998" class="square" alt="G2"></div>
+    <div id="note-261.626" class="square" alt="C3"></div>
+    <div id="note-329.628" class="square" alt="E3"></div>
+    <div id="note-391.995" class="square" alt="G4"></div>
+    <div id="note-466.164" class="square" alt="Bb4"></div>
+    <div id="note-587.33" class="square" alt="D4"></div>
+    <div id="note-659.255" class="square" alt="E4"></div>
+    <div id="note-783.991" class="square" alt="G4"></div>
+    <div id="note-932.328" class="square" alt="Bb5"></div>
+    <div id="note-1174.66" class="square" alt="D5"></div>
+  </div>
+</div>
+
+<div id="intro-box" class="intro-box">
+  <p>Please select a key</p>
+</div>
+
+<footer class="footer">
+  <button id="play-C">C</button>
+  <button id="play-F">F</button>
+  <button id="play-G">G</button>
+</footer>
+
+<div id="hide-all" class="hide-all"></div>
+
+
+
+
+  <script src="js/vendor/jquery-2.1.1.min.js"></script>
+  <script src="js/vendor/jquery.mobile-1.4.5.min.js"></script>
+  <script src="js/vendor/wad.js"></script>  
+  <script src="js/main.js"></script>
+</body>
+</html>
